@@ -1,9 +1,5 @@
 module.exports = {
-  mode: "jit",
-  purge: {
-    enabled: true,
-    content: ["./src/**/*.{html,ts}"],
-  },
+  purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -12,5 +8,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  prefix: "tw",
 };
