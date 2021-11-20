@@ -22,6 +22,18 @@ export class DataService {
       })
     );
   }
+
+  getCourseDeatail(id: any): Observable<any> {
+    const urlDemo = `https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${id}`;
+    return this.http.get(urlDemo).pipe(
+      tap((result) => {
+        console.log(result);
+      }),
+      catchError((err: any) => {
+        return this.handleError(err);
+      })
+    );
+  }
   handleError(err: any) {
     return throwError(err);
   }
