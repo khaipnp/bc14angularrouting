@@ -14,8 +14,10 @@ export class ListCourseComponent implements OnInit {
   }
 
   getCourse() {
-    this.data.getListCourse().subscribe((res) => {
-      this.listCourse = res;
-    });
+    this.data
+      .get('QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01')
+      .subscribe((res) => {
+        this.listCourse = res;
+      });
   }
 }

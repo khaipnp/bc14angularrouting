@@ -19,6 +19,19 @@ const routes: Routes = [
         (m) => m.AdminTemplateModule
       ),
   },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./pages/auth/auth.module').then((m) => m.AuthModule),
+  },
+  // Page Not Found
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./pages/page-not-found/page-not-found.module').then(
+        (m) => m.PageNotFoundModule
+      ),
+  },
 ];
 
 @NgModule({

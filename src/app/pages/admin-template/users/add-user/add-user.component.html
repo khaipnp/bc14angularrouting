@@ -1,0 +1,222 @@
+<div class="mx-10 my-2">
+  <h2 class="my-4 text-4xl font-semibold dark:text-gray-400">Add user</h2>
+  <form
+    #addUserForm="ngForm"
+    (ngSubmit)="addUser(addUserForm.value)"
+    class="px-8 pt-6 pb-8 mb-4 bg-white rounded"
+  >
+    <div class="mb-4 md:flex md:justify-start">
+      <div class="mb-4 w-6/12 md:mr-2 md:mb-0">
+        <label class="block mb-2 text-sm font-bold text-gray-700">
+          Username
+        </label>
+        <input
+          type="text"
+          class="
+            w-full
+            px-3
+            py-2
+            text-sm
+            leading-tight
+            text-gray-700
+            border
+            rounded
+            shadow
+            appearance-none
+            focus:outline-none focus:shadow-outline
+          "
+          placeholder="Username"
+          name="taiKhoan"
+          ngModel
+          #userName="ngModel"
+          required
+          minlength="4"
+          maxlength="16"
+        />
+        <!-- Start Validation -->
+        <div *ngIf="userName.errors && (userName.dirty || userName.touched)">
+          <!-- Check empty -->
+          <div class="text-xs italic text-red-500 mt-3" *ngIf="userName.errors">
+            Please fill username.
+          </div>
+          <!-- Check min & max length -->
+          <div *ngIf="userName.errors || userName.errors">
+            Please fill username .
+          </div>
+        </div>
+        <!-- End Validation -->
+      </div>
+
+      <div class="md:ml-2 w-6/12">
+        <label
+          class="block mb-2 text-sm font-bold text-gray-700"
+          for="lastName"
+        >
+          Mobile
+        </label>
+        <input
+          class="
+            w-full
+            px-3
+            py-2
+            text-sm
+            leading-tight
+            text-gray-700
+            border
+            rounded
+            shadow
+            appearance-none
+            focus:outline-none focus:shadow-outline
+          "
+          #mobile="ngModel"
+          type="text"
+          placeholder="Mobile"
+          name="soDT"
+          ngModel
+          required
+        />
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
+        Full name
+      </label>
+      <input
+        class="
+          w-full
+          px-3
+          py-2
+          mb-3
+          text-sm
+          leading-tight
+          text-gray-700
+          border
+          rounded
+          shadow
+          appearance-none
+          focus:outline-none focus:shadow-outline
+        "
+        #fullName="ngModel"
+        type="text"
+        placeholder="Full name"
+        name="hoTen"
+        ngModel
+        required
+      />
+      <!-- Start Validation -->
+      <div
+        class="text-xs italic text-red-500"
+        *ngIf="fullName.errors && (fullName.dirty || fullName.touched)"
+      >
+        <!-- Check empty -->
+        <div *ngIf="fullName.errors">Please fill fullName.</div>
+        <!-- Check min & max length -->
+        <div *ngIf="fullName.errors || fullName.errors">
+          Please fill fullName.
+        </div>
+      </div>
+      <!-- End Validation -->
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
+        Email
+      </label>
+      <input
+        class="
+          w-full
+          px-3
+          py-2
+          mb-3
+          text-sm
+          leading-tight
+          text-gray-700
+          border
+          rounded
+          shadow
+          appearance-none
+          focus:outline-none focus:shadow-outline
+        "
+        #email="ngModel"
+        type="email"
+        placeholder="Email"
+        name="email"
+        ngModel
+        required
+        maxlength="80"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+      />
+      <!-- Start Validation -->
+      <div
+        class="text-xs italic text-red-500"
+        *ngIf="email.errors && (email.dirty || email.touched)"
+      >
+        <!-- Check empty -->
+        <div *ngIf="email.errors">Please fill email.</div>
+        <!-- Check min & max length -->
+        <div *ngIf="email.errors">Please fill email.</div>
+      </div>
+      <!-- End Validation -->
+    </div>
+
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="password">
+        Password
+      </label>
+      <input
+        class="
+          w-full
+          px-3
+          py-2
+          mb-3
+          text-sm
+          leading-tight
+          text-gray-700
+          border
+          rounded
+          shadow
+          appearance-none
+          focus:outline-none focus:shadow-outline
+        "
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        type="password"
+        #password="ngModel"
+        placeholder="********"
+        name="matKhau"
+        ngModel
+        required
+      />
+      <!-- Start Validation -->
+      <div
+        class="text-xs italic text-red-500"
+        *ngIf="password.errors && (password.dirty || password.touched)"
+      >
+        <!-- Check empty -->
+        <div *ngIf="password.errors">Please fill password.</div>
+        <!-- Check min & max length -->
+        <div *ngIf="password.errors || password.errors">
+          Please fill password.
+        </div>
+      </div>
+      <!-- End Validation -->
+    </div>
+
+    <div class="text-center">
+      <button
+        class="
+          w-full
+          px-4
+          py-2
+          font-bold
+          text-white
+          bg-blue-500
+          rounded-full
+          hover:bg-blue-700
+          focus:outline-none focus:shadow-outline
+        "
+        [disabled]="!addUserForm.valid"
+      >
+        Create User
+      </button>
+    </div>
+  </form>
+</div>

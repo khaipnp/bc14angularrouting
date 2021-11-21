@@ -1,0 +1,100 @@
+<div
+  class="h-screen bg-white flex flex-col space-y-10 justify-center items-center"
+>
+  <!-- Layout  -->
+  <div class="bg-white w-96 shadow-xl rounded p-5">
+    <h1 class="text-3xl font-medium">Sign in Elearning</h1>
+    <p class="text-sm mt-2">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero aspernatur
+      laudantium.
+    </p>
+    <form
+      #loginForm="ngForm"
+      (ngSubmit)="loginCheck(loginForm.value)"
+      class="space-y-5 mt-5"
+    >
+      <!-- Username -->
+      <div>
+        <input
+          type="text"
+          class="w-full h-12 border border-gray-800 rounded px-3"
+          placeholder="Username"
+          name="taiKhoan"
+          ngModel
+          required
+          #userName="ngModel"
+        />
+        <!-- Start Validation -->
+        <div *ngIf="userName.errors && (userName.dirty || userName.touched)">
+          <!-- Check empty -->
+          <div class="text-xs italic text-red-500 mt-3" *ngIf="userName.errors">
+            Please fill username.
+          </div>
+          <!-- Check min & max length -->
+          <div *ngIf="userName.errors || userName.errors">
+            Please fill username .
+          </div>
+        </div>
+        <!-- End Validation -->
+      </div>
+      <!-- Password -->
+      <div>
+        <input
+          type="password"
+          class="w-full h-12 border border-gray-800 rounded px-3"
+          placeholder="Password"
+          name="matKhau"
+          ngModel
+          required
+          #password="ngModel"
+        />
+        <!-- Start Validation -->
+        <div *ngIf="password.errors && (password.dirty || password.touched)">
+          <!-- Check empty -->
+          <div class="text-xs italic text-red-500 mt-3" *ngIf="password.errors">
+            Please fill password.
+          </div>
+          <!-- Check min & max length -->
+          <div *ngIf="password.errors || password.errors">
+            Please fill password .
+          </div>
+        </div>
+        <!-- End Validation -->
+      </div>
+
+      <div class="">
+        <a
+          href="#!"
+          class="
+            font-regular
+            text-blue-700
+            hover:bg-blue-900 hover:text-white
+            rounded-2xl
+            p-2
+          "
+          >Lost password ?</a
+        >
+      </div>
+
+      <button
+        class="
+          text-center
+          w-full
+          bg-blue-700
+          rounded-full
+          text-white
+          py-3
+          font-medium
+        "
+      >
+        Sign in
+      </button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <p>
+    Not have account?
+    <a routerLink="/register" class="text-blue-700 font-medium">Sign-up</a>
+  </p>
+</div>
