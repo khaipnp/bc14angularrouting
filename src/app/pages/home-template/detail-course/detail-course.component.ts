@@ -10,6 +10,8 @@ import { DataService } from 'src/app/_core/services/data.service';
 export class DetailCourseComponent implements OnInit {
   id: any;
   course: any;
+  authToken: any = localStorage.getItem('UserAdmin');
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private data: DataService
@@ -30,6 +32,13 @@ export class DetailCourseComponent implements OnInit {
       .get(`QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${this.id}`)
       .subscribe((res: any) => {
         this.course = res;
+      });
+  }
+  regCourse(codeCourse: any) {
+    this.data
+      .post(`QuanLyKhoaHoc/GhiDanhKhoaHoc`, codeCourse)
+      .subscribe((res: any) => {
+        console.log(res);
       });
   }
 }

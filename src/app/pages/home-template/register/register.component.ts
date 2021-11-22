@@ -13,10 +13,9 @@ export class RegisterComponent implements OnInit {
 
   register(user: any) {
     user.maNhom = 'GP01';
-    console.log(user);
-    this.dataService.post('QuanLyNguoiDung/DangKy', user).subscribe((res) => {
-      console.log(res);
-    });
+    this.dataService
+      .post('QuanLyNguoiDung/DangKy', user)
+      .subscribe((res) => {});
   }
   @HostListener('window:beforeunload', ['$event'])
   canDeactivateRegister() {
