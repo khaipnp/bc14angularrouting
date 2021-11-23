@@ -7,8 +7,10 @@ import { Router } from '@angular/router';
 })
 export class NavbarAdminComponent implements OnInit {
   constructor(private router: Router) {}
-
+  getLocalStorage: any = localStorage.getItem('UserAdmin');
+  userInfo: any = JSON.parse(this.getLocalStorage);
   ngOnInit(): void {}
+
   // Logout Admin User
   logOut() {
     localStorage.removeItem('UserAdmin');

@@ -11,11 +11,17 @@
       alt="enoshima profile"
     />
     <h2 class="mt-4 text-xl dark:text-gray-300 font-extrabold capitalize">
-      Hello KhaiPNP
+      {{ userInfo.taiKhoan }}
     </h2>
     <span class="text-sm dark:text-gray-300">
       <span class="font-semibold text-green-600 dark:text-green-300">
-        Admin
+        Account type: {{ userInfo.maLoaiNguoiDung }}
+      </span>
+    </span>
+    <br />
+    <span class="text-sm dark:text-gray-300">
+      <span class="font-semibold text-green-600 dark:text-green-300">
+        Group: {{ userInfo.maNhom }}
       </span>
     </span>
   </div>
