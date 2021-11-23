@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="container h-full w-full overflow-hidden">
+    <main
+      class="
+        bg-gray-100
+        dark:bg-gray-700
+        transition
+        duration-500
+        ease-in-out
+        overflow-y-auto
+      "
+    >
+      <div class="mx-10 my-2">
+        <h2 class="my-4 text-4xl font-semibold dark:text-gray-400">
+          {{ categoryName }}
+        </h2>
+
+        <div class="max-w-7xl mx-auto my-5 px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center space-x-2 text-gray-400 text-sm">
+            <a
+              routerLink="/admin/dashboard"
+              class="hover:underline hover:text-gray-600"
+              >Dashboard</a
+            >
+            <span>
+              <svg
+                class="h-5 w-5 leading-none text-gray-300"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </span>
+            <a
+              routerLink="/admin/courses"
+              class="hover:underline hover:text-gray-600"
+              >Courses</a
+            >
+            <span>
+              <svg
+                class="h-5 w-5 leading-none text-gray-300"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </span>
+            <a
+              routerLink="/admin/courses/category"
+              class="hover:underline hover:text-gray-600"
+              >Category</a
+            >
+            <span>
+              <svg
+                class="h-5 w-5 leading-none text-gray-300"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </span>
+            <span>{{ categoryName }}</span>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="grid grid-cols-2 gap-4">
+          <div *ngFor="let course of courses">
+            <app-child-detail-course
+              [course]="course"
+            ></app-child-detail-course>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

@@ -27,6 +27,20 @@ const routes: Routes = [
             (m) => m.UsersModule
           ),
       },
+      {
+        path: 'courses',
+        loadChildren: () =>
+          import('../../pages/admin-template/courses/courses.module').then(
+            (m) => m.CoursesModule
+          ),
+      },
+      {
+        path: 'detail-course/:category-name',
+        loadChildren: () =>
+          import('./detail-course/detail-course.module').then(
+            (m) => m.DetailCourseModule
+          ),
+      },
     ],
     canActivate: [AuthGuard],
   },
