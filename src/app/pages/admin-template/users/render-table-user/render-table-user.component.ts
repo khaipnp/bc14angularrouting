@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RenderTableUserComponent implements OnInit {
   @Input() user: any;
+  @Input() index: any;
   constructor() {}
 
   ngOnInit(): void {}

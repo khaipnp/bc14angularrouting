@@ -38,5 +38,46 @@
       Create by {{ course.nguoiTao.hoTen }} - {{ course.ngayTao }}
     </p>
     <p class="text-gray-500">Students: {{ course.soLuongHocVien }}</p>
+    <div class="flex space-x-4">
+      <button
+        type="button"
+        class="
+          p-2
+          pl-5
+          pr-5
+          transition-colors
+          duration-700
+          transform
+          bg-indigo-500
+          hover:bg-blue-400
+          text-gray-100 text-lg
+          rounded-lg
+          focus:border-4
+          border-indigo-300
+        "
+      >
+        Update
+      </button>
+      <button
+        type="button"
+        class="
+          p-2
+          pl-5
+          pr-5
+          transition-colors
+          duration-700
+          transform
+          bg-red-500
+          hover:bg-red-400
+          text-gray-100 text-lg
+          rounded-lg
+          focus:border-4
+          border-indigo-300
+        "
+        (click)="onDeleteCourse(course.maKhoaHoc)"
+      >
+        Delete
+      </button>
+    </div>
   </div>
 </div>

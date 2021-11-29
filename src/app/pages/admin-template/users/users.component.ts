@@ -9,6 +9,7 @@ import { DataService } from 'src/app/_core/services/data.service';
 export class UsersComponent implements OnInit {
   group: any = 'GP01';
   listUser: any;
+  searchText = '';
   constructor(private data: DataService) {}
 
   ngOnInit(): void {
@@ -20,7 +21,10 @@ export class UsersComponent implements OnInit {
         `QuanLyNguoiDung/LayDanhSachNguoiDung_PhanTrang?MaNhom=${this.group}&page=1&pageSize=10`
       )
       .subscribe((data: any) => {
-        return (this.listUser = data.items);
+        return (this.listUser = data);
       });
+  }
+  onEdit() {
+    console.log(123);
   }
 }

@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container items-center max-w-6xl px-8 mx-auto xl:px-5 my-5">
   <div class="row">
-    <ng-container *ngIf="listCourse">
-      <div class="col-3" *ngFor="let course of listCourse">
-        <app-course [course]="course"></app-course>
-      </div>
-    </ng-container>
+    <div class="grid grid-cols-3 gap-4">
+      <ng-container *ngIf="listCourse">
+        <div class="col-3" *ngFor="let course of listCourse">
+          <app-course [course]="course"></app-course>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>
