@@ -32,6 +32,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'enroll',
+        loadChildren: () =>
+          import('./enroll-course/enroll-course.module').then(
+            (m) => m.EnrollCourseModule
+          ),
+      },
+      {
         path: 'register',
         loadChildren: () =>
           import('./register/register.module').then((m) => m.RegisterModule),
