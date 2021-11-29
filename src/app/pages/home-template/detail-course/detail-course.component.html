@@ -22,7 +22,7 @@
             />
           </svg>
         </span>
-        <a href="#" class="hover:underline hover:text-gray-600">{{
+        <a routerLink="/" class="hover:underline hover:text-gray-600">{{
           course.danhMucKhoaHoc.maDanhMucKhoahoc
         }}</a>
         <span>
@@ -113,13 +113,11 @@
         <div class="flex justify-between">
           <p class="text-gray-500 text-sm">
             By
-            <a href="#" class="text-indigo-600 hover:underline">ABC Company</a>
+            <span class="text-indigo-600">{{ course.nguoiTao.hoTen }}</span>
           </p>
           <p class="text-gray-500 text-sm">
             Create at
-            <a href="#" class="text-indigo-600 hover:underline">{{
-              course.ngayTao
-            }}</a>
+            <span class="text-indigo-600">{{ course.ngayTao }}</span>
           </p>
           <p class="text-gray-500 text-sm">
             Views:
@@ -133,12 +131,8 @@
               <span class="font-bold text-indigo-600 text-xl">{{
                 course.soLuongHocVien
               }}</span
-              ><span class="text-indigo-400 text-xl ml-2">Student</span>
+              ><span class="text-indigo-400 text-xl ml-2">students</span>
             </div>
-          </div>
-          <div class="flex-1">
-            <p class="text-green-500 text-xl font-semibold">Save 12%</p>
-            <p class="text-gray-400 text-sm">Inclusive of all Taxes.</p>
           </div>
         </div>
 
@@ -161,7 +155,7 @@
             "
             (click)="regCourse(course)"
           >
-            Add to Cart
+            Enroll now
           </button>
         </div>
       </div>
